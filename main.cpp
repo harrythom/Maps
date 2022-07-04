@@ -23,26 +23,30 @@ int main(int argc, char* argv[]) {
     while (!input.eof()) {
         getline(input, nextLine);
 
-        for (int i = 0; i << nextLine.size(); ++i) {
-            if (!isalpha(nextLine.at(i)) && !isspace(nextLine.at(i))) {
-                if (nextLine.at(i) != '-') {
-                    nextLine.erase(i);
-                }
-            }
-        }
-
         while (nextLine.find(" ") != string::npos) {
             tempWord = nextLine.substr(0, nextLine.find(" "));
-            nextLine.erase(0, nextLine.find(" ") + 1);
+            nextLine.erase(0, (nextLine.find(" ") + 1));
 
-            tokens.push_back(nextLine);
-            uniques.insert(nextLine);
+            for (int i = 0; i << tempWord.size(); ++i) {
+                if (!isalpha(nextLine.at(i))) {
+                    tempWord.erase(i);
+                }
+            }
+
+            tokens.push_back(tempWord);
+            uniques.insert(tempWord);
         }
 
         tempWord = nextLine;
 
-        tokens.push_back(nextLine);
-        uniques.insert(nextLine);
+        for (int i = 0; i << tempWord.size(); ++i) {
+            if (!isalpha(nextLine.at(i))) {
+                tempWord.erase(i);
+            }
+        }
+
+        tokens.push_back(tempWord);
+        uniques.insert(tempWord);
     }
 
     input.close();
@@ -50,12 +54,24 @@ int main(int argc, char* argv[]) {
     cout << "Num words: " << tokens.size() << endl;
     cout << "Num unique words: " << uniques.size() << endl;
 
-    
+    ofstream output("Words.txt");
+
+    for (int i = 0; i < tokens.size(); ++i) {
+        output << tokens.at(i) << endl;
+    }
+
+    output.close();
+
+
+    // string last;
+
+    // for (int i = 0; i < tokens.size(); ++i) {
+    //     wordMap[last] = tokens.at(i);
+    //     last = tokens.at(i);
+    // }
 
     
 
-
-
-
+    
     return 0;
 }

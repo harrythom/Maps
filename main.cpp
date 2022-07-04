@@ -54,13 +54,13 @@ int main(int argc, char* argv[]) {
     cout << "Num words: " << tokens.size() << endl;
     cout << "Num unique words: " << uniques.size() << endl;
 
-    // ofstream output("Words.txt");
+    ofstream output("Words.txt");
 
-    // for (int i = 0; i < tokens.size(); ++i) {
-    //     output << tokens.at(i) << endl;
-    // }
+    for (int i = 0; i < tokens.size(); ++i) {
+        output << tokens.at(i) << endl;
+    }
 
-    // output.close();
+    output.close();
 
 
     // string last;

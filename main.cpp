@@ -16,7 +16,7 @@ int main(int argc, char* argv[]) {
     set <string> uniques;
 
     string nextLine;
-    string tempWord;
+    string tempWord = "blank";
 
     ifstream input(fileName);
 
@@ -24,15 +24,20 @@ int main(int argc, char* argv[]) {
         getline(input, nextLine);
 
         for (int i = 0; i << nextLine.size(); ++i) {
-
-            if (!isalpha(nextLine.at(i))) {
-                if (!isspace(nextLine.at(i))) {
+            if (!isalpha(nextLine.at(i)) && !isspace(nextLine.at(i))) {
+                if (nextLine.at(i) != '-') {
                     nextLine.erase(i);
-
                 }
+            }
+        }
+        for (int i = 0; i << nextLine.size(); ++i) {
+            if (nextLine.find(" ") != string::npos) {
+                tempWord = nextLine.substr(0, nextLine.find(" "));
+                nextLine.erase(0, nextLine.find(" ") + 1);
 
-                tempWord = nextLine.substr(0, i);
-                
+            }
+            else {
+                tempWord = nextLine;
             }
         }
     }

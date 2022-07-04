@@ -9,14 +9,14 @@ using namespace std;
 
 int main(int argc, char* argv[]) {
 
-
     string fileName = argv[1];
 
     vector <string> tokens;
     set <string> uniques;
+    map <string, string> wordMap;
 
     string nextLine;
-    string tempWord = "blank";
+    string tempWord;
 
     ifstream input(fileName);
 
@@ -30,21 +30,29 @@ int main(int argc, char* argv[]) {
                 }
             }
         }
-        for (int i = 0; i << nextLine.size(); ++i) {
-            if (nextLine.find(" ") != string::npos) {
-                tempWord = nextLine.substr(0, nextLine.find(" "));
-                nextLine.erase(0, nextLine.find(" ") + 1);
 
-            }
-            else {
-                tempWord = nextLine;
-            }
+        while (nextLine.find(" ") != string::npos) {
+            tempWord = nextLine.substr(0, nextLine.find(" "));
+            nextLine.erase(0, nextLine.find(" ") + 1);
+
+            tokens.push_back(nextLine);
+            uniques.insert(nextLine);
         }
+
+        tempWord = nextLine;
+
+        tokens.push_back(nextLine);
+        uniques.insert(nextLine);
     }
 
     input.close();
 
+    cout << "Num words: " << tokens.size() << endl;
+    cout << "Num unique words: " << uniques.size() << endl;
 
+    
+
+    
 
 
 

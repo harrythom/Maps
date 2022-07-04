@@ -7,14 +7,7 @@
 
 using namespace std;
 
-int main(int arcg, char* argv[]) {
-
-    string fileName = argv[];
-
-    
-
-
-
+int main(int argc, char* argv[]) {
 
 
 

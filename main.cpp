@@ -23,27 +23,22 @@ int main(int argc, char* argv[]) {
     while (!input.eof()) {
         getline(input, nextLine);
 
+
+        for (int i = 0; i < nextLine.size(); ++i) {
+            if (isalpha(nextLine.at(i) == 0)) {
+                nextLine.erase(i);
+            }
+        }
+
         while (nextLine.find(" ") != string::npos) {
             tempWord = nextLine.substr(0, nextLine.find(" "));
             nextLine.erase(0, (nextLine.find(" ") + 1));
-
-            for (int i = 0; i << tempWord.size(); ++i) {
-                if (!isalpha(nextLine.at(i))) {
-                    tempWord.erase(i);
-                }
-            }
 
             tokens.push_back(tempWord);
             uniques.insert(tempWord);
         }
 
         tempWord = nextLine;
-
-        for (int i = 0; i << tempWord.size(); ++i) {
-            if (!isalpha(nextLine.at(i))) {
-                tempWord.erase(i);
-            }
-        }
 
         tokens.push_back(tempWord);
         uniques.insert(tempWord);
@@ -54,13 +49,13 @@ int main(int argc, char* argv[]) {
     cout << "Num words: " << tokens.size() << endl;
     cout << "Num unique words: " << uniques.size() << endl;
 
-    ofstream output("Words.txt");
+    // ofstream output("Words.txt");
 
-    for (int i = 0; i < tokens.size(); ++i) {
-        output << tokens.at(i) << endl;
-    }
+    // for (int i = 0; i < tokens.size(); ++i) {
+    //     output << tokens.at(i) << endl;
+    // }
 
-    output.close();
+    // output.close();
 
 
     // string last;

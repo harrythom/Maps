@@ -25,7 +25,7 @@ int main(int argc, char* argv[]) {
 
         for (int i = 0; i < nextLine.size(); ++i) {
             if (isalpha(nextLine.at(i)) == 0 && !isspace(nextLine.at(i))) {
-                if (nextLine.at(i) != '-' && isalpha(nextLine.at(i + 1)) != 0) {
+                if (nextLine.at(i) != '-') {
                     nextLine.erase(i, 1);
                 }
             }

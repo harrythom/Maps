@@ -24,16 +24,16 @@ int main(int argc, char* argv[]) {
         getline(input, nextLine);
 
         for (int i = 0; i < nextLine.size(); ++i) {
-            if (isalpha(tempWord.at(i)) == 0) {
+            if (isalpha(nextLine.at(i)) == 0) {
                 if (nextLine.at(i) == ' ') {
                     nextLine.erase(i);
                 }
             }
         }
 
-        while (nextLine.find(" ") != string::npos) {
-            tempWord = nextLine.substr(0, nextLine.find(" "));
-            nextLine.erase(0, (nextLine.find(" ") + 1));
+        while (nextLine.find(' ') != string::npos) {
+            tempWord = nextLine.substr(0, nextLine.find(' '));
+            nextLine.erase(0, (nextLine.find(' ') + 1));
 
             tokens.push_back(tempWord);
             uniques.insert(tempWord);

@@ -31,9 +31,9 @@ int main(int argc, char* argv[]) {
             }
         }
 
-        while (nextLine.find(' ') != string::npos) {
-            tempWord = nextLine.substr(0, nextLine.find(' '));
-            nextLine.erase(0, (nextLine.find(' ') + 1));
+        while (nextLine.find(" ") != string::npos) {
+            tempWord = nextLine.substr(0, nextLine.find(" "));
+            nextLine.erase(0, (nextLine.find(" ") + 1));
 
             tokens.push_back(tempWord);
             uniques.insert(tempWord);

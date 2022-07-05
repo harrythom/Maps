@@ -21,11 +21,13 @@ int main(int argc, char* argv[]) {
     ifstream input(fileName);
 
     while (!input.eof()) {
-        getline(input, nextLine);
+        getline(input, nextLine, '\n');
 
         for (int i = 0; i < nextLine.size(); ++i) {
             if (isalpha(nextLine.at(i)) == 0) {
-                nextLine.erase(i);
+                if (!isspace(nextLine.at(i))) {
+                    nextLine.erase(i);
+                }
             }
         }
 

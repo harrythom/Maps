@@ -24,8 +24,10 @@ int main(int argc, char* argv[]) {
         getline(input, nextLine);
 
         for (int i = 0; i < nextLine.size(); ++i) {
-            if (isalpha(nextLine.at(i)) == 0 && isspace(nextLine.at(i)) == false) {
-                nextLine.erase(i);
+            if (isalpha(nextLine.at(i)) == 0 && !isspace(nextLine.at(i))) {
+                if (nextLine.at(i) != '-' && isalpha(nextLine.at(i + 1)) != 0) {
+                    nextLine.erase(i, 1);
+                }
             }
         }
 
@@ -56,15 +58,12 @@ int main(int argc, char* argv[]) {
 
     output.close();
 
-
     // string last;
 
     // for (int i = 0; i < tokens.size(); ++i) {
     //     wordMap[last] = tokens.at(i);
     //     last = tokens.at(i);
     // }
-
-    
 
     
     return 0;

@@ -65,6 +65,8 @@ int main(int argc, char* argv[]) {
     //     last = tokens.at(i);
     // }
 
+    cout << "new" << endl;
+
     
     return 0;
 }

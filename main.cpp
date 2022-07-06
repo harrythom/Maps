@@ -25,9 +25,7 @@ int main(int argc, char* argv[]) {
 
         for (int i = 0; i < nextLine.size(); ++i) {
             if (isalpha(nextLine.at(i)) == 0 && !isspace(nextLine.at(i))) {
-                if (nextLine.at(i) != '-') {
-                    nextLine.erase(i, 1);
-                }
+                nextLine.erase(i, 1);
             }
         }
 
@@ -50,13 +48,13 @@ int main(int argc, char* argv[]) {
     cout << "Num words: " << tokens.size() << endl;
     cout << "Num unique words: " << uniques.size() << endl;
 
-    // ofstream output("Words.txt");
+    ofstream output("Words.txt");
 
-    // for (int i = 0; i < tokens.size(); ++i) {
-    //     output << tokens.at(i) << endl;
-    // }
+    for (int i = 0; i < tokens.size(); ++i) {
+        output << tokens.at(i) << endl;
+    }
 
-    // output.close();
+    output.close();
 
     // string last;
 

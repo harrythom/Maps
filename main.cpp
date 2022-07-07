@@ -46,11 +46,20 @@ int main(int argc, char* argv[]) {
         return 0;
     }
 
-
     cout << "Num words: " << tokens.size() << endl;
     cout << "Num unique words: " << uniques.size() << endl;
 
+    ofstream output("Words.txt");
+
+    for (set <string>::iterator it = uniques.begin(); it != uniques.end(); ++it) {
+        output << *it << endl;
+    }
+
+    output.close();
+
     
+
+
 
     
     return 0;

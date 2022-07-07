@@ -53,21 +53,21 @@ int main(int argc, char* argv[]) {
 
     //------------Writing to new files-----------//
 
-    ofstream output("Set.txt");
+    // ofstream output("Set.txt");
 
-    for (set <string>::iterator it = uniques.begin(); it != uniques.end(); ++it) {
-        output << *it << endl;
-    }
+    // for (set <string>::iterator it = uniques.begin(); it != uniques.end(); ++it) {
+    //     output << *it << endl;
+    // }
 
-    output.close();
+    // output.close();
 
-    ofstream output("Vector.txt");
+    // ofstream output("Vector.txt");
 
-    for (int i = 0; i < tokens.size(); ++i) {
-        output << tokens.at(i) << endl;
-    }
+    // for (int i = 0; i < tokens.size(); ++i) {
+    //     output << tokens.at(i) << endl;
+    // }
 
-    output.close();
+    // output.close();
 
 
     //-------------Creating wordmap and writing it to file----------------//
@@ -85,7 +85,7 @@ int main(int argc, char* argv[]) {
     //------------
 
     string state = "";
-    
+
     for(int i = 0; i < 100; i++){
         cout << wordMap[state] << " ";
         state = wordMap[state];

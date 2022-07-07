@@ -82,7 +82,7 @@ int main(int argc, char* argv[]) {
     
 
 
-    //------------
+    //------------Test for the "learned" words-----------//
 
     string state = "";
 
@@ -93,7 +93,9 @@ int main(int argc, char* argv[]) {
     
     cout << endl;
 
-    //
+    //----------Another Test-----------//
+
+    
 
 
 

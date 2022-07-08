@@ -72,7 +72,7 @@ int main(int argc, char* argv[]) {
 //    output.close();
 
 
-    //-------------Creating wordmap and writing it to file----------------//
+    //-------------Creating wordMap and writing it to file----------------//
 
     string last = "";
 
